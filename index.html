@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarrierPath — Precision Step-by-Step AI Career Intelligence with Gravity</title>
+  <meta name="description" content="Explore career paths, evaluate skill gaps, and build realistic step-by-step roadmaps with Gravity, your empathetic AI Career Counselor." />
+  <meta name="keywords" content="career path, AI career counselor, career roadmap, skill gap analysis, college graduates, career switchers" />
+
+  <!-- Google Fonts Preconnect & Stylesheets -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="./css/index.css" />
+  <link rel="stylesheet" href="./css/components.css" />
+  <link rel="stylesheet" href="./css/animations.css" />
+</head>
+<body>
+
+  <!-- App Header & Navigation Bar -->
+  <header class="app-header">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-badge" id="brandHomeLink">
+        <div class="brand-icon">
+          <img src="./assets/logo.svg" alt="CarrierPath Logo" width="36" height="36" />
+        </div>
+        <div class="brand-text">
+          <h2>CarrierPath <span style="font-size: 0.9rem; font-weight: 600; opacity: 0.8; font-family: var(--font-body); color: var(--accent-cyan);">&bull; Gravity AI</span></h2>
+          <span class="brand-tagline">Precision Career Intelligence</span>
+        </div>
+      </a>
+
+      <!-- Navigation Tabs -->
+      <nav class="nav-tabs" aria-label="Main Navigation">
+        <button class="nav-tab-btn active" data-view="home" id="navBtnHome">
+          <span>🌌 Overview</span>
+        </button>
+        <button class="nav-tab-btn" data-view="assessment" id="navBtnAssessment">
+          <span>📋 Intake Assessment</span>
+        </button>
+        <button class="nav-tab-btn" data-view="roadmap" id="navBtnRoadmap">
+          <span>🗺️ Strategic Roadmap</span>
+        </button>
+        <button class="nav-tab-btn" data-view="skills" id="navBtnSkills">
+          <span>📊 Skill Gap Matrix</span>
+        </button>
+        <button class="nav-tab-btn" data-view="chat" id="navBtnChat">
+          <span>💬 Counselor Chat</span>
+        </button>
+      </nav>
+
+      <div class="nav-actions">
+        <span class="badge badge-indigo" style="display: flex; align-items: center; gap: 0.4rem;">
+          <span class="hero-pill-dot"></span>
+          <span>Gravity Engine v1.0</span>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Application Container -->
+  <main class="app-container">
+
+    <!-- ==========================================
+         VIEW 1: OVERVIEW & HERO (HOME)
+         ========================================== -->
+    <section class="view-section active" id="view-home">
+      <div class="hero-section">
+        <div class="hero-pill animate-fade-in">
+          <span class="hero-pill-dot"></span>
+          <span>Empathetic, Knowledgeable & Actionable Guidance</span>
+        </div>
+        <h1 class="hero-title">
+          Navigate Your Career Trajectory <br />
+          <span class="gradient-text">Powered by Gravity AI</span>
+        </h1>
+        <p class="hero-subtitle">
+          Say goodbye to generic career advice. Gravity evaluates your existing skill baseline, personal constraints, and industry realities to architect a concrete, milestone-driven roadmap.
+        </p>
+
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button id="heroStartAssessmentBtn" class="btn btn-primary btn-lg">
+            <span>Start Intake Assessment</span>
+            <span>&rarr;</span>
+          </button>
+          <button id="heroViewRoadmapBtn" class="btn btn-secondary btn-lg">
+            <span>Explore Active Roadmap</span>
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">4 Distinct</div>
+            <div class="stat-label">Audience Tracks</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3-Phase</div>
+            <div class="stat-label">Roadmap Granularity</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">Action-Oriented Milestones</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Principles Cards -->
+      <div class="features-grid">
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap">🎯</div>
+          <h3>Tailored Advice</h3>
+          <p>Considers your current education, experience level, skill assets, and real-world weekly time and budget constraints.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap">⚡</div>
+          <h3>Action-Oriented Execution</h3>
+          <p>Zero generic platitudes. Every phase details standard industry certifications, portfolio blueprints, and tangible code milestones.</p>
+        </div>
+
+        <div class="feature-card glass-card">
+          <div class="feature-icon-wrap">⚖️</div>
+          <h3>Balanced Tone & Market Realism</h3>
+          <p>Deeply supportive and encouraging, but rigorously honest regarding market saturation, required skills, and realistic timelines.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 2: INTAKE ASSESSMENT WIZARD
+         ========================================== -->
+    <section class="view-section" id="view-assessment">
+      <div class="wizard-card glass-card">
+        <!-- Progress Bar -->
+        <div class="wizard-progress-bar">
+          <div class="wizard-progress-fill" id="wizardProgressFill"></div>
+        </div>
+
+        <!-- Step 1: Target Audience Profile -->
+        <div class="wizard-step active" id="wizardStep1">
+          <div class="step-indicator">Step 01 of 04 &bull; Starting Point</div>
+          <h2 class="step-title">Choose Your Starting Point</h2>
+          <p class="step-desc">Gravity calibrates tone, complexity, and milestone urgency according to your current life stage.</p>
+
+          <div class="persona-grid">
+            <div class="persona-card selected" data-audience="career-switcher">
+              <span class="persona-icon">🔄</span>
+              <h4>Career Switcher</h4>
+              <p>Upskilling while working. Focused on transferable skills, efficient study hours, and pragmatic market transitions.</p>
+            </div>
+            <div class="persona-card" data-audience="college-grad">
+              <span class="persona-icon">🎓</span>
+              <h4>College Graduate</h4>
+              <p>Bridging academic degree theory into production engineering, portfolio proof, and junior hiring pipelines.</p>
+            </div>
+            <div class="persona-card" data-audience="college-student">
+              <span class="persona-icon">📚</span>
+              <h4>College Student</h4>
+              <p>Balancing coursework, targeting summer technical internships, and building foundational projects.</p>
+            </div>
+            <div class="persona-card" data-audience="high-school">
+              <span class="persona-icon">🚀</span>
+              <h4>High School Explorer</h4>
+              <p>Discovering technical passions, foundational literacy, and evaluating college majors or vocational routes.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Educational & Professional Domain -->
+        <div class="wizard-step" id="wizardStep2">
+          <div class="step-indicator">Step 02 of 04 &bull; Domain & Background</div>
+          <h2 class="step-title">Your Current Background</h2>
+          <p class="step-desc">Help Gravity understand the foundation you are building upon.</p>
+
+          <div class="form-group">
+            <label class="form-label" for="currentDomainSelect">Current Field / Education Domain</label>
+            <select class="form-select" id="currentDomainSelect">
+              <option value="Business & Marketing">Business, Operations, or Marketing</option>
+              <option value="Computer Science / IT">Computer Science or Information Technology</option>
+              <option value="Non-CS STEM (Biology, Physics, Math, Mech Eng)">Non-CS STEM (Math, Physics, Engineering)</option>
+              <option value="Humanities & Social Sciences">Humanities, Social Sciences, or Arts</option>
+              <option value="Customer Support & Admin">Customer Support, Hospitality, or Admin</option>
+              <option value="Self-Taught / Independent Learner">Self-Taught / Independent Learner</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Existing Baseline Skills (Select all that apply)</label>
+            <div class="option-pills">
+              <button type="button" class="option-pill skill-pill-toggle active" data-skill="Problem Solving">Problem Solving</button>
+              <button type="button" class="option-pill skill-pill-toggle active" data-skill="Basic Python">Basic Python</button>
+              <button type="button" class="option-pill skill-pill-toggle active" data-skill="Excel">Excel / Spreadsheets</button>
+              <button type="button" class="option-pill skill-pill-toggle" data-skill="HTML/CSS">HTML / CSS</button>
+              <button type="button" class="option-pill skill-pill-toggle" data-skill="JavaScript">JavaScript</button>
+              <button type="button" class="option-pill skill-pill-toggle" data-skill="SQL">SQL Queries</button>
+              <button type="button" class="option-pill skill-pill-toggle" data-skill="Git / GitHub">Git / GitHub</button>
+              <button type="button" class="option-pill skill-pill-toggle" data-skill="Design / Figma">Design / Figma</button>
+              <button type="button" class="option-pill skill-pill-toggle" data-skill="Linux">Linux CLI</button>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Add Custom Skill</label>
+            <div style="display: flex; gap: 0.6rem;">
+              <input type="text" id="customSkillInput" class="form-input" placeholder="e.g. Docker, Sales, Technical Writing..." />
+              <button type="button" class="btn btn-secondary btn-sm" id="addCustomSkillBtn">Add</button>
+            </div>
+            <div id="selectedSkillsContainer" class="option-pills" style="margin-top: 0.8rem;"></div>
+          </div>
+        </div>
+
+        <!-- Step 3: Target Career Aspiration -->
+        <div class="wizard-step" id="wizardStep3">
+          <div class="step-indicator">Step 03 of 04 &bull; Target Trajectory</div>
+          <h2 class="step-title">Target Career Domain</h2>
+          <p class="step-desc">Select the primary professional trajectory you wish to explore.</p>
+
+          <div class="persona-grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+            <label class="persona-card selected" style="cursor: pointer;">
+              <input type="radio" name="targetCareerRadio" value="full-stack" checked style="display: none;" />
+              <span class="persona-icon">💻</span>
+              <h4>Full-Stack Engineer</h4>
+              <p>Frontend, backend APIs, relational databases, and SaaS application architecture.</p>
+            </label>
+
+            <label class="persona-card" style="cursor: pointer;">
+              <input type="radio" name="targetCareerRadio" value="ai-ml" style="display: none;" />
+              <span class="persona-icon">🤖</span>
+              <h4>AI & Machine Learning</h4>
+              <p>LLM application engineering, PyTorch models, RAG pipelines, and model deployment.</p>
+            </label>
+
+            <label class="persona-card" style="cursor: pointer;">
+              <input type="radio" name="targetCareerRadio" value="cloud-devops" style="display: none;" />
+              <span class="persona-icon">☁️</span>
+              <h4>Cloud & DevOps</h4>
+              <p>Container orchestration, Terraform IaC, CI/CD pipelines, and cloud reliability.</p>
+            </label>
+
+            <label class="persona-card" style="cursor: pointer;">
+              <input type="radio" name="targetCareerRadio" value="data-analytics" style="display: none;" />
+              <span class="persona-icon">📊</span>
+              <h4>Data Analyst / BI</h4>
+              <p>SQL data wrangling, Tableau/Power BI executive dashboards, and business metrics.</p>
+            </label>
+
+            <label class="persona-card" style="cursor: pointer;">
+              <input type="radio" name="targetCareerRadio" value="cyber-security" style="display: none;" />
+              <span class="persona-icon">🛡️</span>
+              <h4>Cyber Security</h4>
+              <p>SOC defense triage, network packet analysis, SIEM logs, and vulnerability mitigation.</p>
+            </label>
+
+            <label class="persona-card" style="cursor: pointer;">
+              <input type="radio" name="targetCareerRadio" value="ui-ux" style="display: none;" />
+              <span class="persona-icon">🎨</span>
+              <h4>UI/UX Product Design</h4>
+              <p>Figma auto-layout design systems, user journey research, and interactive prototypes.</p>
+            </label>
+          </div>
+        </div>
+
+        <!-- Step 4: Real-world Constraints -->
+        <div class="wizard-step" id="wizardStep4">
+          <div class="step-indicator">Step 04 of 04 &bull; Time & Budget Realities</div>
+          <h2 class="step-title">Your Realistic Constraints</h2>
+          <p class="step-desc">Gravity crafts roadmaps around what is actually achievable given your current life balance.</p>
+
+          <div class="form-group">
+            <label class="form-label">Weekly Hours Available for Study & Projects</label>
+            <div class="range-slider-wrap">
+              <div class="range-slider-header">
+                <span>Dedicated Time Commitment</span>
+                <span class="range-slider-val" id="weeklyHoursDisplay">15 hrs / week</span>
+              </div>
+              <input type="range" min="5" max="40" step="5" value="15" class="slider-input" id="weeklyHoursSlider" />
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.5rem;">
+                <span>5 hrs (Casual / Micro)</span>
+                <span>15 hrs (Balanced Evening/Weekend)</span>
+                <span>40 hrs (Full-Time Intensive)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Budget Tier for Courses & Certifications</label>
+            <div class="option-pills">
+              <button type="button" class="option-pill budget-pill active" data-budget="free">
+                🌱 $0 (Strictly Free / Open Source Resources)
+              </button>
+              <button type="button" class="option-pill budget-pill" data-budget="low-cost">
+                📘 Low Budget (&lt;$150 total for standard certs/courses)
+              </button>
+              <button type="button" class="option-pill budget-pill" data-budget="flexible">
+                💼 Flexible / Corporate Reimbursed
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wizard Action Controls -->
+        <div class="wizard-footer">
+          <button type="button" class="btn btn-secondary" id="wizardPrevBtn" style="visibility: hidden;">
+            <span>&larr; Back</span>
+          </button>
+          <button type="button" class="btn btn-primary" id="wizardNextBtn">
+            <span>Continue</span>
+            <span>&rarr;</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 3: STRATEGIC ROADMAP EXPLORER
+         ========================================== -->
+    <section class="view-section" id="view-roadmap">
+      <div id="roadmapContainer">
+        <!-- Rendered by RoadmapRenderer -->
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 4: SKILL GAP MATRIX
+         ========================================== -->
+    <section class="view-section" id="view-skills">
+      <div id="skillMatrixContainer">
+        <!-- Rendered by SkillMatrixController -->
+      </div>
+    </section>
+
+    <!-- ==========================================
+         VIEW 5: LIVE COUNSELOR CHAT
+         ========================================== -->
+    <section class="view-section" id="view-chat">
+      <div id="counselorChatContainer">
+        <!-- Rendered by CounselorChatController -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       MODAL 1: PROJECT BLUEPRINT DETAILS
+       ========================================== -->
+  <div class="modal-overlay" id="blueprintModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeBlueprintModalX">&times;</button>
+      <div id="blueprintModalContent"></div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       MODAL 2: API KEY & LIVE AI SETTINGS
+       ========================================== -->
+  <div class="modal-overlay" id="apiKeyModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeApiKeyModalBtn">&times;</button>
+      <div style="margin-bottom: 1.5rem;">
+        <span class="badge badge-cyan" style="margin-bottom: 0.5rem;">Configuration</span>
+        <h2 style="font-size: 1.5rem; color: #fff; margin-top: 0.3rem;">Gravity AI Engine Settings</h2>
+        <p style="margin-top: 0.4rem; font-size: 0.9rem;">CarrierPath works completely offline with its pre-built knowledge base. You can optionally attach a live API key for continuous unstructured chat sessions.</p>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label" for="apiKeyInput">Custom AI API Key (Gemini or OpenAI Compatible)</label>
+        <input type="password" id="apiKeyInput" class="form-input" placeholder="AIzaSy... or sk-..." />
+        <div style="font-size: 0.775rem; color: var(--text-muted); margin-top: 0.4rem;">
+          Keys are stored locally in your browser's LocalStorage and never transmitted elsewhere.
+        </div>
+      </div>
+
+      <div style="display: flex; justify-content: flex-end; gap: 0.8rem; margin-top: 1.5rem;">
+        <button class="btn btn-secondary btn-sm" onclick="document.getElementById('apiKeyModal').classList.remove('active')">Cancel</button>
+        <button class="btn btn-primary btn-sm" id="saveApiKeyBtn">Save Configuration</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript App Entry -->
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
